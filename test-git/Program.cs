@@ -8,8 +8,14 @@ namespace test_git
 {
     internal class Program
     {
+        static int Summary(int a, int b)
+        {
+            return a + b;
+        }
+
         static void Main(string[] args)
         {
+            Console.WriteLine(Summary(1, 2));
             Console.WriteLine("hello");
         }
     }
