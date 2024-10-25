@@ -25,6 +25,17 @@ namespace test_git
             return a / b;
         }
 
+        static int Fibonacci(int number)
+        {
+            //Если число 1 или 2 возвращаем 1
+            if(number == 1 || number == 2)
+            {  
+                return 1; 
+            }
+            //Рекурсивно возвращаем сумму двух предыдущих чисел
+            return Fibonacci(number-1) + Fibonacci(number - 2);
+        }
+
         static int Reverse(int number, int r)
         {
             if(number < 10)
@@ -36,9 +47,8 @@ namespace test_git
 
         static void Main(string[] args)
         {
-            Console.WriteLine(Reverse(123,0));
-            Console.WriteLine(Summary(1, 2));
-            Console.WriteLine("hello");
+            Console.WriteLine(Fibonacci(10)); 
+            Console.WriteLine(Fibonacci(7));
         }
     }
 }
