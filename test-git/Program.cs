@@ -16,6 +16,14 @@ namespace test_git
         {
             return a - b;
         }
+        static int Multiply(int a, int b)
+        {
+            return a * b;
+        }
+        static double Divide(int a, int b)
+        {
+            return a / b;
+        }
 
         static int Reverse(int number, int r)
         {
