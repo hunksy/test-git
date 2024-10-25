@@ -25,6 +25,24 @@ namespace test_git
             return a / b;
         }
 
+        static int Ackerman(int n, int m)
+        {
+            //Если n равно 0, возвращаем m +1
+            if (n == 0)
+            {
+                return m + 1;
+            }
+            //Если n не равно 0, но m равно 0, вызываем функцию Ackerman с n-1 и 1
+            else if (m == 0)
+            {
+                return Ackerman(n - 1, 1);
+            }
+            //В остальных случаях вызываем Ackerman(n-1, Ackerman(n, m-1))
+            else
+            {
+                return Ackerman(n - 1, Ackerman(n, m - 1));
+            }
+        }
         static int Fibonacci(int number)
         {
             //Если число 1 или 2 возвращаем 1
@@ -47,6 +65,9 @@ namespace test_git
 
         static void Main(string[] args)
         {
+            Console.WriteLine(Ackerman(3, 4));
+            Console.WriteLine(Ackerman(2, 5));
+          
             Console.WriteLine(Fibonacci(10)); 
             Console.WriteLine(Fibonacci(7));
         }
