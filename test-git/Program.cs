@@ -25,6 +25,25 @@ namespace test_git
             return a / b;
         }
 
+        static int Ackerman(int n, int m)
+        {
+            //Если n равно 0, возвращаем m +1
+            if (n == 0)
+            {
+                return m + 1;
+            }
+            //Если n не равно 0, но m равно 0, вызываем функцию Ackerman с n-1 и 1
+            else if (m == 0)
+            {
+                return Ackerman(n - 1, 1);
+            }
+            //В остальных случаях вызываем Ackerman(n-1, Ackerman(n, m-1))
+            else
+            {
+                return Ackerman(n - 1, Ackerman(n, m - 1));
+            }
+        }
+
         static int Reverse(int number, int r)
         {
             if(number < 10)
@@ -36,9 +55,8 @@ namespace test_git
 
         static void Main(string[] args)
         {
-            Console.WriteLine(Reverse(123,0));
-            Console.WriteLine(Summary(1, 2));
-            Console.WriteLine("hello");
+            Console.WriteLine(Ackerman(3, 4));
+            Console.WriteLine(Ackerman(2, 5));
         }
     }
 }
