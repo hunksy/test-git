@@ -43,6 +43,16 @@ namespace test_git
                 return Ackerman(n - 1, Ackerman(n, m - 1));
             }
         }
+        static int Fibonacci(int number)
+        {
+            //Если число 1 или 2 возвращаем 1
+            if(number == 1 || number == 2)
+            {  
+                return 1; 
+            }
+            //Рекурсивно возвращаем сумму двух предыдущих чисел
+            return Fibonacci(number-1) + Fibonacci(number - 2);
+        }
 
         static int Reverse(int number, int r)
         {
@@ -57,6 +67,9 @@ namespace test_git
         {
             Console.WriteLine(Ackerman(3, 4));
             Console.WriteLine(Ackerman(2, 5));
+          
+            Console.WriteLine(Fibonacci(10)); 
+            Console.WriteLine(Fibonacci(7));
         }
     }
 }
